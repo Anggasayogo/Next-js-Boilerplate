@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 import Image from 'next/image'
 
 const Login =(props) => {
-  const [email,setEmail] = useState('john@example.com')
-  const [password,setPassword] = useState('password')
+  const [email,setEmail] = useState('')
+  const [password,setPassword] = useState('')
 
   const onSubmit = () => {
     props.login({
@@ -17,6 +17,7 @@ const Login =(props) => {
       email : email,
       password : password,
     })
+    console.log("This state login", props.user)
   }
 
   return (
@@ -81,7 +82,7 @@ const Login =(props) => {
   )
 }
 const mapstateToProps = (state) => ({
-
+  user : state.login
 })
 
 const mapDispatchToProps = (dispatch) => ({

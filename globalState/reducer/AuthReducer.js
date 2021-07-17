@@ -19,7 +19,7 @@ const LoginReducer = (state = initialState, action) => {
                 login : { data: null, fetching: false, error: action.error }
             } 
         default:
-            return { ...state }
+            return state
     }
 }
 
